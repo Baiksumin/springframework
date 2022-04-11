@@ -15,8 +15,9 @@
       <div class="d-flex flex-column vh-100">
          <nav class="bg-dark navbar-dark navbar font-weight-bold ">
             <a class="navbar-brand" href="#">
-                <img src="/webapp/resources/images/logo-spring.png" class="d-inline-block align-top" width="30" height="30" alt="">
+                <img src="${pageContext.request.contextPath}/resources/images/logo-spring.png" class="d-inline-block align-top" width="30" height="30" alt="">
                 Spring
+                <%-- <img src="<%=request.getContextPath()%>/resources/images/logo-spring.png" class="d-inline-block align-top" width="30" height="30" alt=""> --%>
              </a>
              <div>
                 <a href="#" class="btn btn-success btn-sm ">로그인</a>
