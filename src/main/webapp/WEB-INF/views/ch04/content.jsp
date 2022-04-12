@@ -217,22 +217,22 @@
                   <form method="post" action="join">
                      <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text">mid</span></div>
-                        <input type="text" name="mid" class="form-control" value="${joinForm.mid}" autocomplete="username">
+                        <input type="text" name="mid" class="form-control" value="${ch04Member.mid}" autocomplete="username">
                         <form:errors cssClass="text-danger" path="joinForm.mid"/>
                      </div>
                      <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text">mpassword</span></div>
-                        <input type="password" name="mpassword" class="form-control" value="${joinForm.mpassword}" autocomplete="current-password">
+                        <input type="password" name="mpassword" class="form-control" value="${ch04Member.mpassword}" autocomplete="current-password">
                         <form:errors cssClass="text-danger" path="joinForm.mpassword"/>
                      </div>
                      <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text">memail</span></div>
-                        <input type="text" name="memail" class="form-control" value="${joinForm.memail}">
+                        <input type="text" name="memail" class="form-control" value="${ch04Member.memail}">
                         <form:errors cssClass="text-danger" path="joinForm.memail"/>
                      </div>
                      <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text">mtel</span></div>
-                        <input type="text" name="mtel" class="form-control" value="${joinForm.mtel}">
+                        <input type="text" name="mtel" class="form-control" value="${ch04Member.mtel}">
                         <form:errors cssClass="text-danger" path="joinForm.mtel"/>
                      </div>
                      <input class="btn btn-info" type="submit" value="가입"/>
