@@ -2,6 +2,8 @@ package com.mycompany.webapp.controller;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,19 +24,20 @@ public class Ch03Controller {
 		log.info("실행");
 		return "ch03/content";
 	}
-
 	/*
-	@RequestMapping("/method1")
-	public String method1(String param1, String param2, String param3, String param4, String param5) {
+	@GetMapping("/method1")
+	public String method1(String param1, String param2, String param3, String param4, String param5, HttpServletRequest request) {
 		log.info(param1);
 		log.info(param2);
 		log.info(param3);
 		log.info(param4);
 		log.info(param5);
+		String param1Value = request.getParameter("param1");
+		log.info(param1Value);
 		return "ch03/content";
 	}
-	*/
-	
+		*/
+
 	@GetMapping("/method1")
 	public String method1(@RequestParam("param1") String args1, int param2, double param3, boolean param4,@DateTimeFormat(pattern = "yyy-MM-dd") Date param5) {
 		log.info(args1);

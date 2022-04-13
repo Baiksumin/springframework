@@ -34,6 +34,7 @@
 	</servlet-mapping>
 	
 	<!-- 클라이언트가 POST 방식으로 한글을 보냈을 때 한글을 복원시키는 Filter 추가 -->
+	<!-- 이건 Cookie에도 적용된다! -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

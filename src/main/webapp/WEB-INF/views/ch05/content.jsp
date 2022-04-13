@@ -28,9 +28,6 @@
 				<hr/>
 				<a href="createJsonCookie" class="btn btn-danger btn-sm">JSON 쿠키 생성</a>
 				<a href="getJsonCookie" class="btn btn-danger btn-sm">JSON 쿠키 읽기</a>
-				<hr/>
-				<a href="createJwtCookie" class="btn btn-danger btn-sm">JWT 쿠키 생성</a>
-				<a href="getJwtCookie" class="btn btn-danger btn-sm">JWT 쿠키 읽기</a>
 			</div>
 			<script>
 				function getCookie() {
