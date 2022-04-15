@@ -34,7 +34,6 @@ public class Ch07Controller {
 	
 	@RequestMapping("/content")
 	public String content(HttpServletRequest request) {
-		logger.info("실행");
 		log.info("실행");
 		
 		Date date = new Date();
@@ -135,7 +134,9 @@ public class Ch07Controller {
 	}
 	
 	@GetMapping("/modelAttribute")
-	public String modelAttribute(@ModelAttribute("kind") String kind, @ModelAttribute("sex") String sex) {
+	public String modelAttribute(
+			@ModelAttribute("kind") String kind, 
+			@ModelAttribute("sex") String sex) {
 		return "ch07/clothInfo";
 	}
 	
@@ -147,15 +148,23 @@ public class Ch07Controller {
 		model.addAttribute("sex", sex);
 		return "ch07/clothInfo";
 	}
-	*/
 	/*
 	@GetMapping("/commandObject")
 	public String commandObject(Ch07Cloth cloth) { //String kind 이렇게 개별적으로 받은 애들은 전달되지 않아 앞에 @어노테이션을 붙여야 하지만, DTO는 전달된다!
 		return "ch07/clothInfo";
 	}
 	*/
+	
 	@GetMapping("/commandObject")
 	public String commandObject(@ModelAttribute("cloth") Ch07Cloth cloth) { //String kind 이렇게 개별적으로 받은 애들은 전달되지 않아 앞에 @어노테이션을 붙여야 하지만, DTO는 전달된다!
 		return "ch07/clothInfo";
+	}
+	
+	//요청 매핑 메소드가 실행될 때 마다 먼저 실행된다!
+	@ModelAttribute("commonData")
+	public Ch07Board getCommonData() { //얘가 리턴하는 값이 commonData라는 키 이름으로 request에 저장됨!
+		log.info("실행");
+		Ch07Board board = new Ch07Board(3, "제목3", "내용3", "글쓴이3", new Date());
+		return board;
 	}
 }
