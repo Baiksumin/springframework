@@ -155,8 +155,10 @@ public class Ch07Controller {
 	}
 	*/
 	
+	
+	//String kind 이렇게 개별적으로 받은 애들은 전달되지 않아 앞에 @어노테이션을 붙여야 하지만, DTO는 전달된다!
 	@GetMapping("/commandObject")
-	public String commandObject(@ModelAttribute("cloth") Ch07Cloth cloth) { //String kind 이렇게 개별적으로 받은 애들은 전달되지 않아 앞에 @어노테이션을 붙여야 하지만, DTO는 전달된다!
+	public String commandObject(@ModelAttribute("cloth") Ch07Cloth cloth) {
 		return "ch07/clothInfo";
 	}
 	

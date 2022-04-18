@@ -2,13 +2,12 @@ package com.mycompany.webapp.controller;
 
 import java.util.Date;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mycompany.webapp.dto.Ch03Dto;
@@ -37,9 +36,14 @@ public class Ch03Controller {
 		return "ch03/content";
 	}
 		*/
-
+	
+//	@RequestMapping(value="/method", method = RequestMethod.GET)
 	@GetMapping("/method1")
-	public String method1(@RequestParam("param1") String args1, int param2, double param3, boolean param4,@DateTimeFormat(pattern = "yyy-MM-dd") Date param5) {
+	public String method1(@RequestParam("param1") String args1, 
+						int param2, 
+						double param3, 
+						boolean param4,
+						@DateTimeFormat(pattern = "yyy-MM-dd") Date param5) {
 		log.info(args1);
 		log.info(param2);
 		log.info(param3);
@@ -49,7 +53,12 @@ public class Ch03Controller {
 	}
 	
 	@PostMapping("/method2")
-	public String mathod2(@RequestParam("param1") String args1, int param2, double param3, boolean param4,@DateTimeFormat(pattern = "yyy-MM-dd") Date param5) {
+	public String mathod2(@RequestParam("param1") String args1, 
+			int param2, 
+			double param3, 
+			boolean param4,
+			@DateTimeFormat(pattern = "yyy-MM-dd") Date param5) {
+		
 		log.info(args1);
 		log.info(param2);
 		log.info(param3);
