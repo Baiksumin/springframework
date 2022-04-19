@@ -84,30 +84,30 @@ public class Ch09Controller {
 	}
 	
 	@RequestMapping("/filedownload")
-	   public void filedownload(int fileNo, HttpServletResponse response, @RequestHeader("User-Agent") String userAgent) throws Exception {
-	      //DB에서 가져올 정보
-	      String contentType = "image/png";
-	      String originalFilename = "photo1.jpg";
-	      String saveFilename = "1650005206176-photo1.jpg";
+	public void filedownload(int fileNo, HttpServletResponse response, @RequestHeader("User-Agent") String userAgent) throws Exception {
+		//DB에서 가져올 정보
+		String contentType = "image/png";
+		String originalFilename = "photo1.jpg";
+		String saveFilename = "1650005206176-photo1.jpg";
+		log.info(fileNo);
 	      
-	      //응답 내용의 데이터 타입을 응답 헤더에 추가
-	      response.setContentType(contentType);
+		//응답 내용의 데이터 타입을 응답 헤더에 추가
+		response.setContentType(contentType);
 	      
-	      //다운로드할 파일명을 헤더에 추가
-	      if(userAgent.contains("Trident") || userAgent.contains("MSIE")) {
-	         //IE 브라우저일 경우
-	         originalFilename = URLEncoder.encode(originalFilename, "UTF-8");
-	      } else {
-	         //크롬, 엣지, 사파리일 경우
-	         originalFilename = new String(originalFilename.getBytes("UTF-8"), "ISO-8859-1");
-	      }
-	      response.setHeader("Content-Disposition", "attachment; filename=\"" + originalFilename + "\"");
+		//다운로드할 파일명을 헤더에 추가
+		if(userAgent.contains("Trident") || userAgent.contains("MSIE")) {
+			//IE 브라우저일 경우
+			originalFilename = URLEncoder.encode(originalFilename, "UTF-8");
+		} else {
+			//크롬, 엣지, 사파리일 경우
+			originalFilename = new String(originalFilename.getBytes("UTF-8"), "ISO-8859-1");
+		}
+		response.setHeader("Content-Disposition", "attachment; filename=\"" + originalFilename + "\"");
 	      
-	      //파일 데이터를 응답 본문에 실기
-	      File file = new File("C:/Temp/uploadfiles/" + saveFilename);
-	      if(file.exists()) {
-	         FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
-	      }
-	   }
-
+		//파일 데이터를 응답 본문에 실기
+		File file = new File("C:/Temp/uploadfiles/" + saveFilename);
+		if(file.exists()) {
+			FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
+		}
+	}
 }
