@@ -14,7 +14,6 @@ public class Ch13Service3InjectAnno {
 	public Ch13Service3InjectAnno() {
 		log.info("실행");
 	}
-	
 	//타입으로 주입
 	/*@Autowired
 	private Ch13Dao1CreateByAnno ch13Dao1;
@@ -35,4 +34,15 @@ public class Ch13Service3InjectAnno {
 	@Autowired @Qualifier("ch13Dao1")
 	private Ch13Dao1CreateByAnno ch13Dao1;
 	
+	@Autowired
+	public Ch13Service3InjectAnno(@Qualifier("ch13Dao1") Ch13Dao1CreateByAnno ch13Dao1) {
+		log.info("실행 : 이름으로 주입");
+		this.ch13Dao1 = ch13Dao1;
+	}
+
+	@Autowired
+	public void setCh13Dao1(@Qualifier("ch13Dao1") Ch13Dao1CreateByAnno ch13Dao1) {
+		log.info("실행 : 이름으로 주입");
+		this.ch13Dao1 = ch13Dao1;
+	}
 }

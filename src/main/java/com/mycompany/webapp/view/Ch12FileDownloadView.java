@@ -19,7 +19,6 @@ import lombok.extern.log4j.Log4j2;
 @Component
 @Log4j2
 public class Ch12FileDownloadView extends AbstractView {
-
 	@Override
 	protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		log.info("실행");
@@ -50,7 +49,6 @@ public class Ch12FileDownloadView extends AbstractView {
 			
 			//아래 주석으로 처리한 코드와 맨 아래코드는 같은 의미임!
 			//파일 또는 바이너리 데이터를 응답 본문에 싣기
-			
 			/*InputStream is = new FileInputStream(file);
 			OutputStream os = response.getOutputStream();
 			FileCopyUtils.copy(is, os);
@@ -61,5 +59,4 @@ public class Ch12FileDownloadView extends AbstractView {
 			FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
 		}
 	}
-
 }

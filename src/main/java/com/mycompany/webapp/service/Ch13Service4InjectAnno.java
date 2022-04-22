@@ -17,23 +17,23 @@ public class Ch13Service4InjectAnno {
 	}
 	
 	//타입으로 주입
-	@Resource
-	private Ch13Dao1CreateByAnno ch13Dao1;
-	
-	@Resource
-	public void setCh13Dao1(Ch13Dao1CreateByAnno ch13Dao1) {
-		log.info("실행 : 타입으로 주입");
-		this.ch13Dao1 = ch13Dao1;
-	}
+//	@Resource
+//	private Ch13Dao1CreateByAnno ch13Dao1;
+//	
+//	@Resource
+//	public void setCh13Dao1(Ch13Dao1CreateByAnno ch13Dao1) {
+//		log.info("실행 : 타입으로 주입");
+//		this.ch13Dao1 = ch13Dao1;
+//	}
 	
 	
 	//이름으로 주입
-	/*@Resource @Qualifier("ch13Dao1")
+	@Resource @Qualifier("ch13Dao1")
 	private Ch13Dao1CreateByAnno ch13Dao1;
 	
 	@Resource @Qualifier("ch13Dao1")
 	public void setCh13Dao1(Ch13Dao1CreateByAnno ch13Dao1) {
 		log.info("실행 : 이름으로 주입");
 		this.ch13Dao1 = ch13Dao1;
-	}*/
+	}
 }
